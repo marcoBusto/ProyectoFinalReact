@@ -1,0 +1,189 @@
+@media screen and (min-width: 1025px) {
+  #main {
+    display: grid;
+    grid-template-areas: "header  header header" "menu menu menu" "contenidos contenidos contenidos" "footer footer footer";
+    grid-template-rows: auto auto auto auto;
+    grid-template-columns: auto auto auto;
+    height: 100%;
+    width: 100%;
+    margin: 5% 5% 5% 5%;
+    background-color: whitesmoke;
+  }
+  #header {
+    grid-area:header;
+    float: left;
+    height: 20%;
+    width: 90%;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+  }
+  #izq-menu{
+    float: left;
+  }
+  #menu {
+    grid-area: menu;
+    height: 15%;
+    width: 100%;
+    list-style: none;
+    float: left;
+    width: 100%;
+    height: 100%;
+    background: black;
+    transition: all 1s;
+  }
+  #menu ul {
+    list-style: none;
+  }
+  #menu a {
+    justify-content: space-around;
+    color:whitesmoke;
+    text-decoration: none;
+    height: auto;
+  }
+  #menu li {
+    font-size: 16px;
+    padding: 15px 5px;
+  }
+  #menu a:hover {
+    background: rgb(190, 189, 189);
+    color: red;
+    padding: 15px 15px 30px 10px;
+    padding: 5px;
+    border-radius: 5% 5% 5% 5%;
+  }
+  #icono-cart{
+    float: right;
+    margin-left:60%;
+    font-size: 16px;
+    padding: 15px 5px;
+    position: absolute;
+  }
+  #logo {
+    float: left;
+    height: 144px;
+    width: 351px;
+    margin-left: 5%;
+    display: flex;
+    background: url("escudo.png");
+    background-repeat: no-repeat;
+  }
+  #cartel{
+    display: flex;
+    flex-direction: row;
+    color:red;
+  }
+
+  #contenidos {
+    height:100%;
+    width: 100%;
+    background-color: whitesmoke;
+    grid-area: contenidos;
+    float: left;
+    color:red;
+  }
+  #pie {
+    height: 100%;
+    width: 100%;
+    grid-area: footer;
+    background-color: black;
+    color: whitesmoke;
+    float: left;
+    text-align: center;
+  }
+}
+/*Movil*/
+@media screen and (max-width: 1024px) {
+  #main {
+    display: grid;
+    grid-template-areas: "header" "header" "menu" "contenidos" "footer";
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-columns: auto;
+    height: 90%;
+    width: 90%;
+    margin: 5% 5% 5% 5%;
+  }
+  #header {
+    grid-area: header;
+    float: left;
+    height: 20%;
+    width: 90%;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+  }
+  #izq-menu{
+    float: left;
+  }
+  #menu {
+    grid-area: menu;
+    padding: 1% 0% 0% 3%;
+    list-style: none;
+    float: left;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    background: black;
+    transition: all 1s;
+  }
+  #menu ul {
+    list-style: none;
+  }
+  #menu a {
+    justify-content: space-around;
+    color:whitesmoke;
+    text-decoration: none;
+    height: auto;
+  }
+  #menu li {
+    font-size: 16px;
+    padding: 15px 5px;
+  }
+  #menu a:hover {
+    background: rgb(190, 189, 189);
+    color: red;
+    padding: 15px 15px 30px 10px;
+    padding: 5px;
+    border-radius: 5% 5% 5% 5%;
+  }
+  #icono-cart{
+    float: right;
+    margin-left:50%;
+    font-size: 16px;
+    padding-right: 5px;
+    position: absolute;
+    
+  }
+  #logo {
+    float: left;
+    height: 144px;
+    width: 351px;
+    margin-left: 5%;
+    display: flex;
+    background: url("escudo.png");
+    background-repeat: no-repeat;
+  }
+  #cartel{
+    float:left;
+    text-align: center;
+    color:red;
+    margin-left:10%;
+  }
+  #contenidos {
+    height:100%;
+    width: 100%;
+    background-color: whitesmoke;
+    grid-area: contenidos;
+    float: left;
+    color:red;
+  }
+  #pie {
+    grid-area: footer;
+    background-color: black;
+    color: whitesmoke;
+    float: left;
+    text-align: center;
+    width: 100%;
+  }
+}
