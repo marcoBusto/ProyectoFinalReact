@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getFetch } from '../Productos';
 import ItemList from '../ItemList/ItemList';
-console.log(getFetch);
+
 
 const ItemListContainer = () => {
     const [Productos,setProductos] = useState([])
@@ -17,10 +17,13 @@ const ItemListContainer = () => {
       <div>
         { loading
          ?
-       <h1>Cargando...</h1>
+         <div id='spinner'>
+          <h1>Cargando...</h1>
+          <img src={'spinner.gif'} alt="loading..." />
+         </div>
          :
          <div>
-            <h1>Catalogo</h1>
+            <h1>Mates y Accesorios</h1>
               <div>
                 <ItemList Prod={Productos}/>
               </div>

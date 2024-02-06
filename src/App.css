@@ -63,7 +63,6 @@
     float: left;
     height: 144px;
     width: 351px;
-    margin-left: 5%;
     display: flex;
     background: url("escudo.png");
     background-repeat: no-repeat;
@@ -72,8 +71,15 @@
     display: flex;
     flex-direction: row;
     color:red;
+    text-align: center;
   }
-
+  #spinner{
+    text-align: center;
+  }
+  #spinner img{
+    height: 5%;
+    width: 5%;
+  }
   #contenidos {
     height:100%;
     width: 100%;
@@ -81,6 +87,13 @@
     grid-area: contenidos;
     float: left;
     color:red;
+    padding: 3% 3% 3% 3%;
+  }
+  #card{
+    height: 40%;
+    width: 40%;
+    float: left;
+    margin: 1% 1% 1% 1%;
   }
   #pie {
     height: 100%;
@@ -159,7 +172,6 @@
     float: left;
     height: 144px;
     width: 351px;
-    margin-left: 5%;
     display: flex;
     background: url("escudo.png");
     background-repeat: no-repeat;
@@ -170,6 +182,13 @@
     color:red;
     margin-left:10%;
   }
+  #spinner{
+    text-align: center;
+  }
+  #spinner img{
+    height: 5%;
+    width: 5%;
+  }
   #contenidos {
     height:100%;
     width: 100%;
@@ -177,6 +196,13 @@
     grid-area: contenidos;
     float: left;
     color:red;
+    padding: 3% 3% 3% 3%;
+  }
+  #card{
+    height: 40%;
+    width: 40%;
+    float: left;
+    margin: 1% 1% 1% 1%;
   }
   #pie {
     grid-area: footer;

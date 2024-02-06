@@ -1,13 +1,13 @@
 import './App.css'
 import { BrowserRouter, Navigate, Routes,Route } from 'react-router-dom'
 //importamos los componentes creados //
-import Inicio from './components/Inicio'
-import Camisetas from './components/Camisetas'
-import Mates from './components/Mates'
+import Inicio from './components/views/Inicio'
+import Camisetas from './components/views/Camisetas'
+import Mates from './components/views/Mates'
 import Header from './layouts/Header'
 import Footer from './layouts/Footer'
 import Section from './layouts/Section'
-import ItemListContainer from './components/ItemListContainer/ItemListContainer'
+
 
 //importamos la nav bar //
 import Navbar from './layouts/Navbar'
