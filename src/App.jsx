@@ -1,9 +1,6 @@
 import './App.css'
 import { BrowserRouter, Navigate, Routes,Route } from 'react-router-dom'
 //importamos los componentes creados //
-import Inicio from './components/views/Inicio'
-import Camisetas from './components/views/Camisetas'
-import Mates from './components/views/Mates'
 import Header from './layouts/Header'
 import Footer from './layouts/Footer'
 import Section from './layouts/Section'
@@ -13,6 +10,7 @@ import Section from './layouts/Section'
 import Navbar from './layouts/Navbar'
 
 import { Container } from 'react-bootstrap'
+import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 
 
 
@@ -24,9 +22,7 @@ function App() {
     <BrowserRouter>
         <Routes>
            <Route path='/' element={<Navbar/>}>
-           <Route index  element={<Inicio/>}/>
-           <Route path='Camisetas'  element={<Camisetas/>}/>
-           <Route path='Mates'  element={<Mates/>}/>
+           <Route path='/:categoria'  element={<ItemListContainer/>}/>
            <Route path='*' element={ <Navigate replace to="/"/>} />
            </Route>
         </Routes>

@@ -1,19 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { getFetch } from '../Productos';
 import ItemList from '../ItemList/ItemList';
+import { useParams } from 'react-router-dom';
 
 
 const ItemListContainer = () => {
+    const {categoria} = useParams();  
     const [Productos,setProductos] = useState([])
     const [loading, SetLoading] = useState(true)
+    
     useEffect(() => {
       getFetch
       .then((resolve) => setProductos(resolve))
       .catch(err => console.error(err))
       .finally(() => SetLoading(false))
-    },[])
-
-    return ( 
+    },[])  
+   return ( 
       <div>
         { loading
          ?
@@ -22,10 +24,10 @@ const ItemListContainer = () => {
           <img src={'spinner.gif'} alt="loading..." />
          </div>
          :
+         
          <div>
-            <h1>Mates y Accesorios</h1>
               <div>
-                <ItemList Prod={Productos}/>
+                <ItemList Prod={Productos} Cat={categoria}/>
               </div>
          </div>
         }
