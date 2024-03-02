@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { getFetch } from '../Productos';
 import ItemList from '../ItemList/ItemList';
 import { useParams } from 'react-router-dom';
-
+import { getFirestore,doc, getDoc } from 'firebase/firestore';
 
 const ItemListContainer = () => {
     const {categoria} = useParams();  
@@ -10,11 +9,14 @@ const ItemListContainer = () => {
     const [loading, SetLoading] = useState(true)
     
     useEffect(() => {
-      getFetch
-      .then((resolve) => setProductos(resolve))
-      .catch(err => console.error(err))
-      .finally(() => SetLoading(false))
-    },[])  
+      const db = getFirestore();
+      const productoRef = doc(db,"productos","F3NplRCxPFwgy3kSy4Yo")
+      getDoc(productoRef).then(documento => {
+        if(documento.exists()){
+          console.log(documento.data())
+        }
+      })
+      }, []) 
    return ( 
       <div>
         { loading
@@ -36,4 +38,6 @@ const ItemListContainer = () => {
 }
 
 export default ItemListContainer
+
+
 

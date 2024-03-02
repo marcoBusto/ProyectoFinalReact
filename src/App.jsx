@@ -11,13 +11,12 @@ import Navbar from './layouts/Navbar'
 
 import { Container } from 'react-bootstrap'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer'
-
-
+ 
 
 function App() {
   return (
     <>
-    <Container>
+    <Container>  
     <Header/>
     <BrowserRouter>
         <Routes>
