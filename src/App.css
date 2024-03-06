@@ -90,9 +90,11 @@
     padding: 3% 3% 3% 3%;
   }
   #card{
-    height: 40%;
-    width: 40%;
+    height: auto;
+    width: 30%;
     float: left;
+    display: flex;
+    flex-direction: column;
     margin: 1% 1% 1% 1%;
   }
   #pie {

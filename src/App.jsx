@@ -11,17 +11,20 @@ import Navbar from './layouts/Navbar'
 
 import { Container } from 'react-bootstrap'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer'
- 
+import ItemDetail from './components/ItemDetail/ItemDetail'
+
+
 
 function App() {
   return (
     <>
-    <Container>  
+    <Container>
     <Header/>
     <BrowserRouter>
         <Routes>
            <Route path='/' element={<Navbar/>}>
            <Route path='/:categoria'  element={<ItemListContainer/>}/>
+           <Route path='/ItemDetail'  element={<ItemDetail/>}/>
            <Route path='*' element={ <Navigate replace to="/"/>} />
            </Route>
         </Routes>

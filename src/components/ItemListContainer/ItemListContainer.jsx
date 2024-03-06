@@ -1,23 +1,32 @@
 import React, { useState, useEffect } from 'react';
 import ItemList from '../ItemList/ItemList';
 import { useParams } from 'react-router-dom';
-import { getFirestore,doc, getDoc } from 'firebase/firestore';
+import { getFirestore, collection, getDocs } from "firebase/firestore";
 
 const ItemListContainer = () => {
-    const {categoria} = useParams();  
-    const [Productos,setProductos] = useState([])
-    const [loading, SetLoading] = useState(true)
-    
-    useEffect(() => {
+  const { categoria } = useParams();
+  const [Productos, setProductos] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchProductos = async () => {
       const db = getFirestore();
-      const productoRef = doc(db,"productos","F3NplRCxPFwgy3kSy4Yo")
-      getDoc(productoRef).then(documento => {
-        if(documento.exists()){
-          console.log(documento.data())
-        }
-      })
-      }, []) 
-   return ( 
+      const productoRef = collection(db, "productos");
+      
+      try {
+        const querySnapshot = await getDocs(productoRef);
+        const productosData = querySnapshot.docs.map(doc => doc.data());
+        setProductos(productosData);
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching productos:", error);
+        setLoading(false);
+      }
+    };
+    fetchProductos();
+  }, []);
+
+  return ( 
       <div>
         { loading
          ?
@@ -38,6 +47,5 @@ const ItemListContainer = () => {
 }
 
 export default ItemListContainer
-
 
 
